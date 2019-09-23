@@ -385,7 +385,7 @@ class Rheostat extends React.Component {
           if (currentIndex < snapPoints.length - 1) {
             proposedValue = snapPoints[currentIndex + 1];
           }
-        // move cursor left unless there is overflow
+          // move cursor left unless there is overflow
         } else if (currentIndex > 0) {
           proposedValue = snapPoints[currentIndex - 1];
         }
@@ -771,6 +771,9 @@ class Rheostat extends React.Component {
       background: Background,
       progressBar: ProgressBar,
       styles,
+      ariaValuetext,
+      ariaLabel,
+      ariaLabelledBy,
     } = this.props;
 
     const {
@@ -811,6 +814,9 @@ class Rheostat extends React.Component {
                 aria-valuemax={this.getMaxValue(idx)}
                 aria-valuemin={this.getMinValue(idx)}
                 aria-valuenow={values[idx]}
+                aria-valuetext={ariaValuetext}
+                aria-label={ariaLabel}
+                aria-labelledby={ariaLabelledBy}
                 aria-disabled={disabled}
                 data-handle-key={idx}
                 key={idx /* eslint-disable-line react/no-array-index-key */}
