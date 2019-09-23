@@ -771,9 +771,6 @@ class Rheostat extends React.Component {
       background: Background,
       progressBar: ProgressBar,
       styles,
-      ariaValuetext,
-      ariaLabel,
-      ariaLabelledBy,
     } = this.props;
 
     const {
@@ -814,9 +811,9 @@ class Rheostat extends React.Component {
                 aria-valuemax={this.getMaxValue(idx)}
                 aria-valuemin={this.getMinValue(idx)}
                 aria-valuenow={values[idx]}
-                aria-valuetext={ariaValuetext}
-                aria-label={ariaLabel}
-                aria-labelledby={ariaLabelledBy}
+                aria-valuetext={this.props['aria-valuetext']}
+                aria-label={this.props['aria-label']}
+                aria-labelledby={this.props['aria-labelledby']}
                 aria-disabled={disabled}
                 data-handle-key={idx}
                 key={idx /* eslint-disable-line react/no-array-index-key */}
